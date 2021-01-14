@@ -35,10 +35,10 @@
             this.lukeLabel = new System.Windows.Forms.Label();
             this.seamusLabel = new System.Windows.Forms.Label();
             this.cjLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.darenRentAmount = new System.Windows.Forms.TextBox();
+            this.lukeRentAmount = new System.Windows.Forms.TextBox();
+            this.seamusRentAmount = new System.Windows.Forms.TextBox();
+            this.cjRentAmount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -66,11 +66,12 @@
             this.rentButton.TabIndex = 2;
             this.rentButton.Text = "Submit";
             this.rentButton.UseVisualStyleBackColor = true;
+            this.rentButton.Click += new System.EventHandler(this.rentButton_Click);
             // 
             // DarenLabel
             // 
             this.DarenLabel.AutoSize = true;
-            this.DarenLabel.Location = new System.Drawing.Point(674, 96);
+            this.DarenLabel.Location = new System.Drawing.Point(747, 95);
             this.DarenLabel.Name = "DarenLabel";
             this.DarenLabel.Size = new System.Drawing.Size(94, 25);
             this.DarenLabel.TabIndex = 3;
@@ -79,7 +80,7 @@
             // lukeLabel
             // 
             this.lukeLabel.AutoSize = true;
-            this.lukeLabel.Location = new System.Drawing.Point(674, 184);
+            this.lukeLabel.Location = new System.Drawing.Point(758, 184);
             this.lukeLabel.Name = "lukeLabel";
             this.lukeLabel.Size = new System.Drawing.Size(83, 25);
             this.lukeLabel.TabIndex = 4;
@@ -88,7 +89,7 @@
             // seamusLabel
             // 
             this.seamusLabel.AutoSize = true;
-            this.seamusLabel.Location = new System.Drawing.Point(674, 274);
+            this.seamusLabel.Location = new System.Drawing.Point(727, 280);
             this.seamusLabel.Name = "seamusLabel";
             this.seamusLabel.Size = new System.Drawing.Size(114, 25);
             this.seamusLabel.TabIndex = 5;
@@ -97,39 +98,43 @@
             // cjLabel
             // 
             this.cjLabel.AutoSize = true;
-            this.cjLabel.Location = new System.Drawing.Point(674, 356);
+            this.cjLabel.Location = new System.Drawing.Point(779, 355);
             this.cjLabel.Name = "cjLabel";
             this.cjLabel.Size = new System.Drawing.Size(62, 25);
             this.cjLabel.TabIndex = 6;
             this.cjLabel.Text = "CJ  $";
             // 
-            // textBox1
+            // darenRentAmount
             // 
-            this.textBox1.Location = new System.Drawing.Point(847, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 31);
-            this.textBox1.TabIndex = 7;
+            this.darenRentAmount.Location = new System.Drawing.Point(847, 89);
+            this.darenRentAmount.Name = "darenRentAmount";
+            this.darenRentAmount.ReadOnly = true;
+            this.darenRentAmount.Size = new System.Drawing.Size(228, 31);
+            this.darenRentAmount.TabIndex = 7;
             // 
-            // textBox2
+            // lukeRentAmount
             // 
-            this.textBox2.Location = new System.Drawing.Point(847, 178);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 31);
-            this.textBox2.TabIndex = 8;
+            this.lukeRentAmount.Location = new System.Drawing.Point(847, 178);
+            this.lukeRentAmount.Name = "lukeRentAmount";
+            this.lukeRentAmount.ReadOnly = true;
+            this.lukeRentAmount.Size = new System.Drawing.Size(228, 31);
+            this.lukeRentAmount.TabIndex = 8;
             // 
-            // textBox3
+            // seamusRentAmount
             // 
-            this.textBox3.Location = new System.Drawing.Point(847, 274);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(228, 31);
-            this.textBox3.TabIndex = 9;
+            this.seamusRentAmount.Location = new System.Drawing.Point(847, 274);
+            this.seamusRentAmount.Name = "seamusRentAmount";
+            this.seamusRentAmount.ReadOnly = true;
+            this.seamusRentAmount.Size = new System.Drawing.Size(228, 31);
+            this.seamusRentAmount.TabIndex = 9;
             // 
-            // textBox4
+            // cjRentAmount
             // 
-            this.textBox4.Location = new System.Drawing.Point(847, 349);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(228, 31);
-            this.textBox4.TabIndex = 10;
+            this.cjRentAmount.Location = new System.Drawing.Point(847, 349);
+            this.cjRentAmount.Name = "cjRentAmount";
+            this.cjRentAmount.ReadOnly = true;
+            this.cjRentAmount.Size = new System.Drawing.Size(228, 31);
+            this.cjRentAmount.TabIndex = 10;
             // 
             // label1
             // 
@@ -146,10 +151,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 616);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cjRentAmount);
+            this.Controls.Add(this.seamusRentAmount);
+            this.Controls.Add(this.lukeRentAmount);
+            this.Controls.Add(this.darenRentAmount);
             this.Controls.Add(this.cjLabel);
             this.Controls.Add(this.seamusLabel);
             this.Controls.Add(this.lukeLabel);
@@ -158,7 +163,7 @@
             this.Controls.Add(this.rentLabel);
             this.Controls.Add(this.rentTextBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "RentCalculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,10 +178,10 @@
         private System.Windows.Forms.Label lukeLabel;
         private System.Windows.Forms.Label seamusLabel;
         private System.Windows.Forms.Label cjLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox darenRentAmount;
+        private System.Windows.Forms.TextBox lukeRentAmount;
+        private System.Windows.Forms.TextBox seamusRentAmount;
+        private System.Windows.Forms.TextBox cjRentAmount;
         private System.Windows.Forms.Label label1;
     }
 }
